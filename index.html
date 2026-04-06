@@ -188,10 +188,17 @@
     }
 
     .title {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       font-size: clamp(1.05rem, 2vw, 1.32rem);
       color: #dce6ff;
       font-weight: 700;
+    }
+
+    .hero-business {
+      margin: 0 0 20px;
+      font-size: 1.02rem;
+      color: #ebf2ff;
+      font-weight: 600;
     }
 
     .hero-copy {
@@ -331,7 +338,8 @@
 
     .experience-card,
     .location-card,
-    .address-card {
+    .address-card,
+    .business-card {
       border-radius: var(--radius-xl);
       padding: 26px;
     }
@@ -367,6 +375,10 @@
       margin: 0;
     }
 
+    .lead + .lead {
+      margin-top: 12px;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -398,6 +410,11 @@
 
     .service-card li + li {
       margin-top: 8px;
+    }
+
+    .services-note {
+      margin-top: 18px;
+      color: var(--muted);
     }
 
     .info-grid {
@@ -478,6 +495,11 @@
       color: rgba(185, 193, 217, 0.8);
       font-size: 0.93rem;
       text-align: center;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      color: #8ea0c9;
     }
 
     .reveal {
@@ -565,6 +587,7 @@
       .experience-card,
       .location-card,
       .address-card,
+      .business-card,
       .service-card,
       .info-card,
       .portfolio-card,
@@ -615,6 +638,7 @@
       <div class="brand">Vadim Kassin</div>
       <nav class="nav">
         <a href="#experience">Experience</a>
+        <a href="#business">Business</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
         <a href="#portfolio">Portfolio</a>
@@ -633,6 +657,9 @@
 
           <h1>Senior Mobile & Backend Developer</h1>
           <p class="title">Flutter / iOS / Android / Node.js</p>
+          <p class="hero-business">
+            I provide freelance mobile and backend development services to international clients.
+          </p>
 
           <div class="hero-copy">
             <p>
@@ -707,6 +734,25 @@
       </div>
     </section>
 
+    <section id="business" class="reveal delay-2">
+      <div class="container">
+        <div class="business-card info-card">
+          <h2 class="section-heading">
+            <span class="icon">🏢</span>
+            Business Activity
+          </h2>
+
+          <p class="lead">
+            I operate as an independent software developer providing mobile and backend development services.
+          </p>
+
+          <p class="lead">
+            My work includes building mobile applications, backend systems, and supporting infrastructure for clients worldwide.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="reveal delay-2">
       <div class="container">
         <h2 class="section-heading">
@@ -735,6 +781,10 @@
             </ul>
           </article>
         </div>
+
+        <p class="services-note">
+          Services are provided remotely for international clients on a contract or freelance basis.
+        </p>
       </div>
     </section>
 
@@ -778,7 +828,7 @@
             <li class="contact-item">
               <span class="item-icon">✉️</span>
               <div>
-                <div class="item-label">Email</div>
+                <div class="item-label">Business Email</div>
                 <div class="item-value">
                   <a href="mailto:vgzulus@gmail.com">vgzulus@gmail.com</a>
                 </div>
@@ -804,6 +854,16 @@
                 </div>
               </div>
             </li>
+
+            <li class="contact-item">
+              <span class="item-icon">🌐</span>
+              <div>
+                <div class="item-label">Website</div>
+                <div class="item-value">
+                  <a href="https://zulus128.github.io/portfolio/">zulus128.github.io/portfolio/</a>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
 
@@ -813,7 +873,11 @@
             Portfolio
           </h2>
 
-          <ul class="portfolio-list">
+          <p class="lead">
+            Published mobile application developed and maintained by me:
+          </p>
+
+          <ul class="portfolio-list" style="margin-top: 16px;">
             <li class="portfolio-item">
               <span class="item-icon">🐙</span>
               <div>
@@ -872,7 +936,8 @@
   </main>
 
   <footer class="footer">
-    © <span id="year"></span> Vadim Kassin · Senior Mobile & Backend Developer
+    <div>© <span id="year"></span> Vadim Kassin · Senior Mobile & Backend Developer</div>
+    <div class="footer-note">Independent Developer · Freelance Services</div>
   </footer>
 
   <script>
