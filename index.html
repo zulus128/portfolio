@@ -1,1111 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Vadim Kassin | Senior Mobile & Backend Developer</title>
-  <meta
-    name="description"
-    content="Vadim Kassin — Senior Mobile & Backend Developer with 20+ years of software engineering experience, including Flutter, iOS, Android, Node.js, Firebase, NestJS, and Laravel."
-  />
-  <style>
-    :root {
-      --bg: #0b1020;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --text: #f3f6ff;
-      --muted: #b9c1d9;
-      --accent: #6aa7ff;
-      --accent-2: #7df0d2;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --max-width: 1160px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(106, 167, 255, 0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(125, 240, 210, 0.12), transparent 22%),
-        linear-gradient(180deg, #08101d 0%, #0b1020 50%, #0d1224 100%);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 38px 38px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent 85%);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    a:hover {
-      color: #9cc4ff;
-    }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max-width));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(8, 12, 24, 0.62);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 72px;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .nav a {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .nav a:hover {
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 64px 0 26px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .hero-card,
-    .info-card,
-    .service-card,
-    .stat-card,
-    .contact-card,
-    .portfolio-card,
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-card {
-      border-radius: var(--radius-xl);
-      padding: 34px;
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -40px -70px auto;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(106,167,255,0.28), transparent 70%);
-      filter: blur(8px);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      margin-bottom: 18px;
-      border-radius: 999px;
-      color: #d8e7ff;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.92rem;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      box-shadow: 0 0 18px rgba(106, 167, 255, 0.6);
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      line-height: 1.04;
-      letter-spacing: -0.04em;
-    }
-
-    .title {
-      margin: 0 0 14px;
-      font-size: clamp(1.05rem, 2vw, 1.32rem);
-      color: #dce6ff;
-      font-weight: 700;
-    }
-
-    .hero-business {
-      margin: 0 0 20px;
-      font-size: 1.02rem;
-      color: #ebf2ff;
-      font-weight: 600;
-    }
-
-    .hero-copy {
-      color: var(--muted);
-      font-size: 1.02rem;
-      max-width: 70ch;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #08101d;
-      background: linear-gradient(135deg, #8fe7ff, #7db8ff);
-      box-shadow: 0 14px 30px rgba(90, 156, 255, 0.25);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 18px;
-      animation: fadeUp 1s ease both;
-    }
-
-    .profile-card {
-      padding: 22px;
-      border-radius: var(--radius-xl);
-      text-align: center;
-    }
-
-    .profile-photo-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-
-    .profile-photo-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -10px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(125,240,210,0.4), rgba(106,167,255,0.35));
-      filter: blur(18px);
-      z-index: 0;
-      opacity: 0.8;
-    }
-
-    .profile-photo {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 250px);
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-    }
-
-    .profile-mini {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 8px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .stat-card {
-      border-radius: var(--radius-lg);
-      padding: 18px;
-    }
-
-    .stat-value {
-      font-size: 1.7rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    section {
-      padding: 18px 0;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 18px;
-      font-size: clamp(1.5rem, 2.2vw, 2rem);
-      letter-spacing: -0.03em;
-    }
-
-    .section-heading .icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 1.1rem;
-    }
-
-    .experience-card,
-    .location-card,
-    .address-card,
-    .business-card,
-    .leadership-card,
-    .fintech-card {
-      border-radius: var(--radius-xl);
-      padding: 26px;
-    }
-
-    .experience-grid,
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 20px;
-      list-style: none;
-      padding: 0;
-      margin: 0 0 18px;
-    }
-
-    .experience-grid li,
-    .leadership-grid li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .experience-grid li::before,
-    .leadership-grid li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.72em;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-    }
-
-    .lead {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .lead + .lead {
-      margin-top: 12px;
-    }
-
-    .services-grid,
-    .projects-grid,
-    .double-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .service-card,
-    .project-card {
-      border-radius: var(--radius-xl);
-      padding: 24px;
-      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-    }
-
-    .service-card:hover,
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(140, 186, 255, 0.24);
-      background: rgba(255, 255, 255, 0.075);
-    }
-
-    .service-card h3,
-    .project-card h3 {
-      margin: 0 0 14px;
-      font-size: 1.2rem;
-    }
-
-    .service-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .service-card li + li {
-      margin-top: 8px;
-    }
-
-    .services-note {
-      margin-top: 18px;
-      color: var(--muted);
-    }
-
-    .project-meta {
-      color: var(--muted);
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      margin: 0 0 12px;
-    }
-
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .project-links a {
-      font-weight: 600;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .info-card {
-      border-radius: var(--radius-xl);
-      padding: 24px;
-    }
-
-    .contact-list,
-    .portfolio-list {
-      display: grid;
-      gap: 14px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .contact-item,
-    .portfolio-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 16px;
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .item-icon {
-      flex: 0 0 auto;
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.07);
-      color: #dce8ff;
-      font-size: 0.95rem;
-    }
-
-    .item-label {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-    }
-
-    .item-value {
-      color: var(--text);
-      word-break: break-word;
-    }
-
-    .portfolio-card {
-      border-radius: var(--radius-xl);
-      padding: 24px;
-    }
-
-    .store-badge {
-      margin-top: 18px;
-      display: inline-block;
-    }
-
-    .store-badge img {
-      width: 170px;
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin: 0;
-    }
-
-    .footer {
-      padding: 22px 0 42px;
-      color: rgba(185, 193, 217, 0.8);
-      font-size: 0.93rem;
-      text-align: center;
-    }
-
-    .footer-note {
-      margin-top: 10px;
-      color: #8ea0c9;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      animation: reveal 0.8s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.08s; }
-    .delay-2 { animation-delay: 0.16s; }
-    .delay-3 { animation-delay: 0.24s; }
-    .delay-4 { animation-delay: 0.32s; }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(26px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes reveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.9;
-      }
-      50% {
-        transform: scale(1.18);
-        opacity: 1;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    @media (max-width: 960px) {
-      .hero-grid,
-      .services-grid,
-      .info-grid,
-      .projects-grid,
-      .double-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero {
-        padding-top: 42px;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .topbar-inner {
-        min-height: 64px;
-      }
-
-      .nav {
-        gap: 12px;
-      }
-
-      .hero-card,
-      .profile-card,
-      .experience-card,
-      .location-card,
-      .address-card,
-      .business-card,
-      .leadership-card,
-      .fintech-card,
-      .service-card,
-      .info-card,
-      .portfolio-card,
-      .project-card,
-      .stat-card {
-        padding: 20px;
-      }
-
-      .experience-grid,
-      .leadership-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cta-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(calc(100% - 20px), var(--max-width));
-      }
-
-      h1 {
-        font-size: 2.4rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        display: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vadim Kassin | Senior Mobile & Backend Developer</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0b1020;
+  color:#f3f6ff;
+  line-height:1.6;
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+h1 {font-size:40px;margin-bottom:10px;}
+h2 {margin-top:40px;}
+a {color:#6aa7ff;}
+
+.card {
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+@media(max-width:800px){
+  .grid{grid-template-columns:1fr;}
+}
+
+img.profile {
+  max-width:200px;
+  border-radius:12px;
+}
+
+.badge img {
+  width:160px;
+}
+
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">Vadim Kassin</div>
-      <nav class="nav">
-        <a href="#experience">Experience</a>
-        <a href="#business">Business</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="#portfolio">Portfolio</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-card">
-          <div class="eyebrow">
-            <span class="dot"></span>
-            Available for remote projects
-          </div>
+<div class="container">
 
-          <h1>Senior Mobile & Backend Developer</h1>
-          <p class="title">Flutter / iOS / Android / Node.js</p>
-          <p class="hero-business">
-            I provide freelance mobile and backend development services to international clients.
-          </p>
+<h1>Vadim Kassin</h1>
+<p><strong>Senior Mobile & Backend Developer</strong></p>
 
-          <div class="hero-copy">
-            <p>
-              Senior Mobile & Backend Developer with 20+ years of software engineering experience,
-              including leadership roles such as CIO, Deputy CIO, Managing Director, and Team Lead.
-            </p>
-            <p>
-              I specialize in building scalable mobile applications, fintech systems, enterprise platforms,
-              and backend infrastructure for products used by real customers and businesses.
-            </p>
-            <p>
-              My expertise includes native iOS and Android development, Flutter, React Native, Node.js,
-              NestJS, Firebase, PHP/Laravel, as well as computer vision and AI integrations.
-            </p>
-          </div>
+<img class="profile" src="IMG_0697.jpeg">
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Contact</a>
-            <a class="btn btn-secondary" href="https://github.com/zulus128" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn btn-secondary" href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999" target="_blank" rel="noopener noreferrer">App Store</a>
-          </div>
-        </div>
+<p>
+Senior software engineer with 20+ years of experience, including leadership roles such as CIO and Team Lead.
+</p>
 
-        <div class="hero-side">
-          <div class="profile-card hero-card">
-            <div class="profile-photo-wrap">
-              <img class="profile-photo" src="IMG_0697.jpeg" alt="Vadim Kassin" />
-            </div>
-            <div class="profile-mini">Based between Turkey and Kazakhstan · Working remotely with international clients</div>
-          </div>
+<p>
+I provide freelance mobile and backend development services to international clients.
+</p>
 
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-value">20+</div>
-              <div class="stat-label">Years in software engineering</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">10+</div>
-              <div class="stat-label">Years in mobile development</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">30+</div>
-              <div class="stat-label">Delivered mobile applications</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">15+</div>
-              <div class="stat-label">Years in finance / enterprise IT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+---
 
-    <section id="experience" class="reveal delay-1">
-      <div class="container">
-        <div class="experience-card hero-card">
-          <h2 class="section-heading">
-            <span class="icon">💼</span>
-            Professional Experience
-          </h2>
+<div class="card">
+<h2>🏢 Business Activity</h2>
 
-          <ul class="experience-grid">
-            <li>20+ years of overall software engineering experience</li>
-            <li>10+ years in mobile development (iOS & Android)</li>
-            <li>6+ years in cross-platform development (Flutter, React Native)</li>
-            <li>15+ years in finance, stock exchange, and brokerage systems</li>
-            <li>Former CIO / Deputy CIO / Managing Director</li>
-            <li>30+ successfully delivered mobile applications</li>
-          </ul>
+<p>
+I operate as an independent software developer providing mobile and backend development services.
+</p>
 
-          <p class="lead">
-            I take full ownership of projects — from architecture design to production release, scaling, and ongoing support.
-          </p>
-        </div>
-      </div>
-    </section>
+<p>
+Services are provided remotely for international clients.
+</p>
+</div>
 
-    <section id="business" class="reveal delay-2">
-      <div class="container double-grid">
-        <div class="business-card info-card">
-          <h2 class="section-heading">
-            <span class="icon">🏢</span>
-            Business Activity
-          </h2>
+---
 
-          <p class="lead">
-            I operate as an independent software developer providing mobile and backend development services.
-          </p>
+<div class="card">
+<h2>💼 Experience</h2>
 
-          <p class="lead">
-            My work includes building mobile applications, backend systems, enterprise platforms, and supporting infrastructure for clients worldwide.
-          </p>
+<ul>
+<li>20+ years software engineering</li>
+<li>10+ years mobile (iOS & Android)</li>
+<li>6+ years Flutter</li>
+<li>Fintech & enterprise systems</li>
+<li>Former CIO / Team Lead</li>
+</ul>
 
-          <p class="lead">
-            Services are provided remotely for international clients on a contract or freelance basis.
-          </p>
-        </div>
+</div>
 
-        <div class="leadership-card info-card">
-          <h2 class="section-heading">
-            <span class="icon">🧠</span>
-            Leadership Experience
-          </h2>
+---
 
-          <ul class="leadership-grid">
-            <li>Former CIO / Deputy CIO in financial sector</li>
-            <li>Managed teams up to 15 developers</li>
-            <li>Led architecture, delivery, and scaling of complex systems</li>
-            <li>Worked as Team Lead for mobile and backend development</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<div class="card">
+<h2>🛠 Services</h2>
 
-    <section class="reveal delay-2">
-      <div class="container">
-        <div class="fintech-card info-card">
-          <h2 class="section-heading">
-            <span class="icon">🏦</span>
-            Fintech & Enterprise Background
-          </h2>
+<ul>
+<li>Flutter apps</li>
+<li>iOS / Android native</li>
+<li>Firebase / Node.js / NestJS</li>
+<li>PHP / Laravel</li>
+<li>Backend architecture</li>
+</ul>
 
-          <p class="lead">
-            I have extensive experience in financial systems, including stock exchange trading platforms,
-            brokerage solutions, FIX protocol integrations, secure enterprise systems, and high-load backend infrastructure.
-          </p>
+</div>
 
-          <p class="lead">
-            My background includes work related to Kazakhstan Stock Exchange (KASE), trading systems,
-            financial messaging, enterprise Java systems, and large-scale internal business platforms.
-          </p>
-        </div>
-      </div>
-    </section>
+---
 
-    <section class="reveal delay-2">
-      <div class="container">
-        <h2 class="section-heading">
-          <span class="icon">🛠</span>
-          Services
-        </h2>
+<div class="card">
+<h2>🚀 Selected Projects</h2>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>📱 Mobile Development</h3>
-            <ul>
-              <li>Cross-platform applications (Flutter, React Native)</li>
-              <li>Native iOS (Swift, SwiftUI, Objective-C, Combine)</li>
-              <li>Native Android (Kotlin, Java)</li>
-              <li>Architecture, performance optimization, and release management</li>
-            </ul>
-          </article>
+<h3>Tamata</h3>
+<p>Marketplace app with large user base</p>
+<a href="https://apps.apple.com/us/app/tamata-%D8%B7%D9%85%D8%A7%D8%B7%D8%A9/id1510330653">App Store</a>
 
-          <article class="service-card">
-            <h3>⚙️ Backend Development</h3>
-            <ul>
-              <li>Firebase (Cloud Functions, Firestore)</li>
-              <li>Node.js / NestJS</li>
-              <li>PHP / Laravel</li>
-              <li>REST API design and integration</li>
-              <li>Scalable backend architecture and support systems</li>
-            </ul>
-          </article>
-        </div>
+<h3>Uplines</h3>
+<p>Loyalty and eCommerce platform (client project, company acquired)</p>
 
-        <p class="services-note">
-          Additional background includes C/C++, Java enterprise technologies, cloud services, CI/CD pipelines,
-          messaging systems, and infrastructure-related work.
-        </p>
-      </div>
-    </section>
+<h3>Taza Express</h3>
+<a href="https://apps.apple.com/jo/app/taza-express/id1614409775">App Store</a>
 
-    <section id="projects" class="reveal delay-3">
-      <div class="container">
-        <h2 class="section-heading">
-          <span class="icon">🚀</span>
-          Selected Projects
-        </h2>
+<h3>Intrigma</h3>
+<a href="https://apps.apple.com/us/app/intrigma/id1318192614">App Store</a>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Tamata</h3>
-            <div class="project-meta">Large marketplace app for the Iraqi market</div>
-            <p>
-              Mobile application for a large-scale marketplace with hundreds of thousands of users
-              and millions of transactions per month. Included AI/ML-powered product suggestions.
-            </p>
-            <div class="project-links">
-              <a href="https://apps.apple.com/us/app/tamata-%D8%B7%D9%85%D8%A7%D8%B7%D8%A9/id1510330653" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </article>
+<h3>Mobiline</h3>
+<a href="https://www.mobiline.com/">Website</a>
 
-          <article class="project-card">
-            <h3>Uplines</h3>
-            <div class="project-meta">Loyalty and eCommerce platform</div>
-            <p>
-              Collaborative loyalty platform uniting stores and shoppers. My role included mobile app development,
-              backend development with NestJS, and team leadership.
-            </p>
-            <div class="project-links">
-              <a href="https://www.uplines.com.sa/en" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-          </article>
+<h3>AvgSpeed Watch</h3>
+<p>My own published application</p>
+<a href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999">App Store</a>
 
-          <article class="project-card">
-            <h3>Taza Express</h3>
-            <div class="project-meta">Delivery platform with multiple mobile applications</div>
-            <p>
-              Delivery ecosystem including customer, manager, warehouse, and driver applications,
-              with integrations for maps, warehouse flows, and POS printers.
-            </p>
-            <div class="project-links">
-              <a href="https://apps.apple.com/jo/app/taza-express/id1614409775" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </article>
+</div>
 
-          <article class="project-card">
-            <h3>Intrigma</h3>
-            <div class="project-meta">US hospital staff scheduling app</div>
-            <p>
-              Mobile application used for managing staff schedules and requests for hospital teams,
-              focused on simple and modern workflows for busy physicians.
-            </p>
-            <div class="project-links">
-              <a href="https://apps.apple.com/us/app/intrigma/id1318192614" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </article>
+---
 
-          <article class="project-card">
-            <h3>Mobiline</h3>
-            <div class="project-meta">Messenger and calling app</div>
-            <p>
-              Messenger and caller with audio and video calls, matchmaking, and search by interests.
-              The product was presented at CES 2020 in the USA.
-            </p>
-            <div class="project-links">
-              <a href="https://www.mobiline.com/" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-          </article>
+<div class="card">
+<h2>📬 Contact</h2>
 
-          <article class="project-card">
-            <h3>AvgSpeed Watch</h3>
-            <div class="project-meta">Published watchOS application</div>
-            <p>
-              Apple Watch application for tracking and analyzing movement speed in real time.
-              Developed and maintained by me and published on the Apple App Store.
-            </p>
-            <div class="project-links">
-              <a href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<p>Email: vgzulus@gmail.com</p>
+<p>Turkey: +90 535 567 17 52</p>
+<p>Kazakhstan: +7 777 228 01 08</p>
 
-    <section class="reveal delay-3">
-      <div class="container info-grid">
-        <div class="info-card location-card">
-          <h2 class="section-heading">
-            <span class="icon">🌍</span>
-            Location
-          </h2>
-          <p class="lead">
-            I am based between <strong>Turkey and Kazakhstan</strong> and work primarily
-            <strong>remotely with international clients</strong>.
-          </p>
-        </div>
+</div>
 
-        <div class="info-card address-card">
-          <h2 class="section-heading">
-            <span class="icon">📍</span>
-            Address
-          </h2>
-          <p class="lead">
-            Blok 87I d 3<br />
-            Hurma mah Eksioglu Akdeniz Evleri<br />
-            Antalya, 07130<br />
-            Turkey
-          </p>
-        </div>
-      </div>
-    </section>
+---
 
-    <section id="contact" class="reveal delay-3">
-      <div class="container info-grid">
-        <div class="contact-card info-card">
-          <h2 class="section-heading">
-            <span class="icon">📬</span>
-            Contact
-          </h2>
+<div class="card">
+<h2>🔗 Portfolio</h2>
 
-          <ul class="contact-list">
-            <li class="contact-item">
-              <span class="item-icon">✉️</span>
-              <div>
-                <div class="item-label">Business Email</div>
-                <div class="item-value">
-                  <a href="mailto:vgzulus@gmail.com">vgzulus@gmail.com</a>
-                </div>
-              </div>
-            </li>
+<ul>
+<li><a href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999">App Store</a></li>
+<li><a href="https://github.com/zulus128">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/vadim-kassin-25106320">LinkedIn</a></li>
+<li><a href="https://www.upwork.com/freelancers/vadimk19">Upwork</a></li>
+</ul>
 
-            <li class="contact-item">
-              <span class="item-icon">🇹🇷</span>
-              <div>
-                <div class="item-label">Phone (Turkey)</div>
-                <div class="item-value">
-                  <a href="tel:+905355671752">+90 535 567 17 52</a>
-                </div>
-              </div>
-            </li>
+<div class="badge">
+<a href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999">
+<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+</a>
+</div>
 
-            <li class="contact-item">
-              <span class="item-icon">🇰🇿</span>
-              <div>
-                <div class="item-label">Phone (Kazakhstan)</div>
-                <div class="item-value">
-                  <a href="tel:+77772280108">+7 777 228 01 08</a>
-                </div>
-              </div>
-            </li>
+</div>
 
-            <li class="contact-item">
-              <span class="item-icon">🌐</span>
-              <div>
-                <div class="item-label">Website</div>
-                <div class="item-value">
-                  <a href="https://zulus128.github.io/portfolio/">zulus128.github.io/portfolio/</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+</div>
 
-        <div id="portfolio" class="portfolio-card">
-          <h2 class="section-heading">
-            <span class="icon">🔗</span>
-            Portfolio
-          </h2>
-
-          <p class="lead">
-            Published mobile application developed and maintained by me, along with public professional profiles and portfolio links:
-          </p>
-
-          <ul class="portfolio-list" style="margin-top: 16px;">
-            <li class="portfolio-item">
-              <span class="item-icon"></span>
-              <div>
-                <div class="item-label">App Store</div>
-                <div class="item-value">
-                  <a href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999" target="_blank" rel="noopener noreferrer">AvgSpeed Watch</a>
-                </div>
-              </div>
-            </li>
-
-            <li class="portfolio-item">
-              <span class="item-icon">🐙</span>
-              <div>
-                <div class="item-label">GitHub</div>
-                <div class="item-value">
-                  <a href="https://github.com/zulus128" target="_blank" rel="noopener noreferrer">github.com/zulus128</a>
-                </div>
-              </div>
-            </li>
-
-            <li class="portfolio-item">
-              <span class="item-icon">💼</span>
-              <div>
-                <div class="item-label">LinkedIn</div>
-                <div class="item-value">
-                  <a href="https://www.linkedin.com/in/vadim-kassin-25106320" target="_blank" rel="noopener noreferrer">linkedin.com/in/vadim-kassin-25106320</a>
-                </div>
-              </div>
-            </li>
-
-            <li class="portfolio-item">
-              <span class="item-icon">🧑‍💻</span>
-              <div>
-                <div class="item-label">Upwork</div>
-                <div class="item-value">
-                  <a href="https://www.upwork.com/freelancers/vadimk19" target="_blank" rel="noopener noreferrer">upwork.com/freelancers/vadimk19</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-
-          <a
-            class="store-badge"
-            href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              alt="Download on the App Store"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year"></span> Vadim Kassin · Senior Mobile & Backend Developer</div>
-    <div class="footer-note">Independent Developer · Freelance Services</div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
