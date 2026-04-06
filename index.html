@@ -9,12 +9,11 @@
   <title>Vadim Kassin | Senior Mobile & Backend Developer</title>
   <meta
     name="description"
-    content="Vadim Kassin — Senior Mobile & Backend Developer specializing in Flutter, iOS, Android, Node.js, Firebase, NestJS, and Laravel."
+    content="Vadim Kassin — Senior Mobile & Backend Developer with 20+ years of software engineering experience, including Flutter, iOS, Android, Node.js, Firebase, NestJS, and Laravel."
   />
   <style>
     :root {
       --bg: #0b1020;
-      --bg-soft: rgba(255, 255, 255, 0.05);
       --card: rgba(255, 255, 255, 0.06);
       --card-border: rgba(255, 255, 255, 0.1);
       --text: #f3f6ff;
@@ -132,7 +131,8 @@
     .service-card,
     .stat-card,
     .contact-card,
-    .portfolio-card {
+    .portfolio-card,
+    .project-card {
       background: var(--card);
       border: 1px solid var(--card-border);
       box-shadow: var(--shadow);
@@ -339,12 +339,15 @@
     .experience-card,
     .location-card,
     .address-card,
-    .business-card {
+    .business-card,
+    .leadership-card,
+    .fintech-card {
       border-radius: var(--radius-xl);
       padding: 26px;
     }
 
-    .experience-grid {
+    .experience-grid,
+    .leadership-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px 20px;
@@ -353,13 +356,15 @@
       margin: 0 0 18px;
     }
 
-    .experience-grid li {
+    .experience-grid li,
+    .leadership-grid li {
       position: relative;
       padding-left: 18px;
       color: var(--muted);
     }
 
-    .experience-grid li::before {
+    .experience-grid li::before,
+    .leadership-grid li::before {
       content: "";
       position: absolute;
       left: 0;
@@ -379,25 +384,30 @@
       margin-top: 12px;
     }
 
-    .services-grid {
+    .services-grid,
+    .projects-grid,
+    .double-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .service-card {
+    .service-card,
+    .project-card {
       border-radius: var(--radius-xl);
       padding: 24px;
       transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     }
 
-    .service-card:hover {
+    .service-card:hover,
+    .project-card:hover {
       transform: translateY(-4px);
       border-color: rgba(140, 186, 255, 0.24);
       background: rgba(255, 255, 255, 0.075);
     }
 
-    .service-card h3 {
+    .service-card h3,
+    .project-card h3 {
       margin: 0 0 14px;
       font-size: 1.2rem;
     }
@@ -415,6 +425,27 @@
     .services-note {
       margin-top: 18px;
       color: var(--muted);
+    }
+
+    .project-meta {
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-links a {
+      font-weight: 600;
     }
 
     .info-grid {
@@ -560,7 +591,9 @@
     @media (max-width: 960px) {
       .hero-grid,
       .services-grid,
-      .info-grid {
+      .info-grid,
+      .projects-grid,
+      .double-grid {
         grid-template-columns: 1fr;
       }
 
@@ -588,14 +621,18 @@
       .location-card,
       .address-card,
       .business-card,
+      .leadership-card,
+      .fintech-card,
       .service-card,
       .info-card,
       .portfolio-card,
+      .project-card,
       .stat-card {
         padding: 20px;
       }
 
-      .experience-grid {
+      .experience-grid,
+      .leadership-grid {
         grid-template-columns: 1fr;
       }
 
@@ -639,7 +676,7 @@
       <nav class="nav">
         <a href="#experience">Experience</a>
         <a href="#business">Business</a>
-        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
         <a href="#portfolio">Portfolio</a>
       </nav>
@@ -663,15 +700,16 @@
 
           <div class="hero-copy">
             <p>
-              I am a senior software engineer with over 10 years of experience in native mobile development
-              (iOS & Android) and 6+ years in cross-platform development (Flutter, React Native).
+              Senior Mobile & Backend Developer with 20+ years of software engineering experience,
+              including leadership roles such as CIO, Deputy CIO, Managing Director, and Team Lead.
             </p>
             <p>
-              My expertise includes building scalable, high-performance mobile applications and backend systems,
-              with a strong focus on clean architecture, maintainability, and compliance with platform guidelines.
+              I specialize in building scalable mobile applications, fintech systems, enterprise platforms,
+              and backend infrastructure for products used by real customers and businesses.
             </p>
             <p>
-              I also have hands-on experience with computer vision and AI integrations.
+              My expertise includes native iOS and Android development, Flutter, React Native, Node.js,
+              NestJS, Firebase, PHP/Laravel, as well as computer vision and AI integrations.
             </p>
           </div>
 
@@ -692,20 +730,20 @@
 
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-value">10+</div>
-              <div class="stat-label">Years in mobile development</div>
+              <div class="stat-value">20+</div>
+              <div class="stat-label">Years in software engineering</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">6+</div>
-              <div class="stat-label">Years in Flutter / cross-platform</div>
+              <div class="stat-value">10+</div>
+              <div class="stat-label">Years in mobile development</div>
             </div>
             <div class="stat-card">
               <div class="stat-value">30+</div>
               <div class="stat-label">Delivered mobile applications</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">18+</div>
-              <div class="stat-label">Years in software engineering</div>
+              <div class="stat-value">15+</div>
+              <div class="stat-label">Years in finance / enterprise IT</div>
             </div>
           </div>
         </div>
@@ -721,21 +759,23 @@
           </h2>
 
           <ul class="experience-grid">
+            <li>20+ years of overall software engineering experience</li>
             <li>10+ years in mobile development (iOS & Android)</li>
             <li>6+ years in cross-platform development (Flutter, React Native)</li>
+            <li>15+ years in finance, stock exchange, and brokerage systems</li>
+            <li>Former CIO / Deputy CIO / Managing Director</li>
             <li>30+ successfully delivered mobile applications</li>
-            <li>18+ years of overall software engineering experience</li>
           </ul>
 
           <p class="lead">
-            I take full ownership of projects — from architecture design to production release and ongoing support.
+            I take full ownership of projects — from architecture design to production release, scaling, and ongoing support.
           </p>
         </div>
       </div>
     </section>
 
     <section id="business" class="reveal delay-2">
-      <div class="container">
+      <div class="container double-grid">
         <div class="business-card info-card">
           <h2 class="section-heading">
             <span class="icon">🏢</span>
@@ -747,13 +787,52 @@
           </p>
 
           <p class="lead">
-            My work includes building mobile applications, backend systems, and supporting infrastructure for clients worldwide.
+            My work includes building mobile applications, backend systems, enterprise platforms, and supporting infrastructure for clients worldwide.
+          </p>
+
+          <p class="lead">
+            Services are provided remotely for international clients on a contract or freelance basis.
+          </p>
+        </div>
+
+        <div class="leadership-card info-card">
+          <h2 class="section-heading">
+            <span class="icon">🧠</span>
+            Leadership Experience
+          </h2>
+
+          <ul class="leadership-grid">
+            <li>Former CIO / Deputy CIO in financial sector</li>
+            <li>Managed teams up to 15 developers</li>
+            <li>Led architecture, delivery, and scaling of complex systems</li>
+            <li>Worked as Team Lead for mobile and backend development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal delay-2">
+      <div class="container">
+        <div class="fintech-card info-card">
+          <h2 class="section-heading">
+            <span class="icon">🏦</span>
+            Fintech & Enterprise Background
+          </h2>
+
+          <p class="lead">
+            I have extensive experience in financial systems, including stock exchange trading platforms,
+            brokerage solutions, FIX protocol integrations, secure enterprise systems, and high-load backend infrastructure.
+          </p>
+
+          <p class="lead">
+            My background includes work related to Kazakhstan Stock Exchange (KASE), trading systems,
+            financial messaging, enterprise Java systems, and large-scale internal business platforms.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="services" class="reveal delay-2">
+    <section class="reveal delay-2">
       <div class="container">
         <h2 class="section-heading">
           <span class="icon">🛠</span>
@@ -764,9 +843,10 @@
           <article class="service-card">
             <h3>📱 Mobile Development</h3>
             <ul>
-              <li>Cross-platform applications (Flutter)</li>
-              <li>Native iOS (Swift, SwiftUI, Objective-C)</li>
+              <li>Cross-platform applications (Flutter, React Native)</li>
+              <li>Native iOS (Swift, SwiftUI, Objective-C, Combine)</li>
               <li>Native Android (Kotlin, Java)</li>
+              <li>Architecture, performance optimization, and release management</li>
             </ul>
           </article>
 
@@ -777,14 +857,98 @@
               <li>Node.js / NestJS</li>
               <li>PHP / Laravel</li>
               <li>REST API design and integration</li>
-              <li>Scalable backend architecture</li>
+              <li>Scalable backend architecture and support systems</li>
             </ul>
           </article>
         </div>
 
         <p class="services-note">
-          Services are provided remotely for international clients on a contract or freelance basis.
+          Additional background includes C/C++, Java enterprise technologies, cloud services, CI/CD pipelines,
+          messaging systems, and infrastructure-related work.
         </p>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal delay-3">
+      <div class="container">
+        <h2 class="section-heading">
+          <span class="icon">🚀</span>
+          Selected Projects
+        </h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Tamata</h3>
+            <div class="project-meta">Large marketplace app for the Iraqi market</div>
+            <p>
+              Mobile application for a large-scale marketplace with hundreds of thousands of users
+              and millions of transactions per month. Included AI/ML-powered product suggestions.
+            </p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/tamata-%D8%B7%D9%85%D8%A7%D8%B7%D8%A9/id1510330653" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Uplines</h3>
+            <div class="project-meta">Loyalty and eCommerce platform</div>
+            <p>
+              Collaborative loyalty platform uniting stores and shoppers. My role included mobile app development,
+              backend development with NestJS, and team leadership.
+            </p>
+            <div class="project-links">
+              <a href="https://www.uplines.com.sa/en" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Taza Express</h3>
+            <div class="project-meta">Delivery platform with multiple mobile applications</div>
+            <p>
+              Delivery ecosystem including customer, manager, warehouse, and driver applications,
+              with integrations for maps, warehouse flows, and POS printers.
+            </p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/jo/app/taza-express/id1614409775" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Intrigma</h3>
+            <div class="project-meta">US hospital staff scheduling app</div>
+            <p>
+              Mobile application used for managing staff schedules and requests for hospital teams,
+              focused on simple and modern workflows for busy physicians.
+            </p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/intrigma/id1318192614" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Mobiline</h3>
+            <div class="project-meta">Messenger and calling app</div>
+            <p>
+              Messenger and caller with audio and video calls, matchmaking, and search by interests.
+              The product was presented at CES 2020 in the USA.
+            </p>
+            <div class="project-links">
+              <a href="https://www.mobiline.com/" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>AvgSpeed Watch</h3>
+            <div class="project-meta">Published watchOS application</div>
+            <p>
+              Apple Watch application for tracking and analyzing movement speed in real time.
+              Developed and maintained by me and published on the Apple App Store.
+            </p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/tr/app/avgspeed-watch/id6756965999" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
